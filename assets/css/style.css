@@ -10,6 +10,7 @@
 *{
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
 }
 html{
     font-size: 62.5%;
@@ -158,7 +159,7 @@ h6{
 }
 .intro-content{
     position: relative;
-    top: -7rem;
+    /*top: -7rem;*/
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     gap: var(--gap);
@@ -187,7 +188,7 @@ h6{
     justify-content: center;
     max-width: 64rem;
     text-align: center;
-    height: 100vh;
+    min-height: 100vh;
  }
  .grid-one-content{
     min-height: 100vh;
@@ -236,6 +237,195 @@ h6{
    top: -4rem;
    left: -1rem;
    transform: rotate(5deg);
-
+ }
+ .gallery-img{
+    width: 100%;
+    max-width: 36rem;
+    max-height: 36rem;
+    overflow: hidden;
+ }
+ .gallery-img img{
+    transition: all 300ms ease-in-out;
+ }
+ .gallery-img img:hover{
+    transform: translate(-3%, -3%) scale(1.2) rotate(5deg);
 
  }
+ .resposive-table{
+    overflow: hidden;
+    overflow-x: auto;
+    min-width: 36rem;
+ }
+ .contact-form{
+    grid-column: span 2;
+ }
+ .contact-form .form-grid{
+    border: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:var(--gap)
+ }
+ .form-group{
+
+    flex: 1 1 32rem;  
+
+ }
+ .form-group label{
+    display: block;
+ }
+ .form-group input, .form-group textarea{
+    border: none;
+    background: white;
+    padding: 1.5rem 2rem;
+    width: 100%;
+    font-size: 3rem;
+ }
+ body .full-width{
+    width: 100%;
+    flex:1 1 100%
+ }
+ 
+ table{
+    width: 100%;
+    border-collapse: collapse;
+}
+table caption{
+    font-style: italic;
+    font-size: 1.6rem;
+    text-align: left;
+    margin-bottom: 1rem;
+
+}
+ table td, table th{
+    padding: 1rem;
+    border: 0.1rem solid var(--light-gray-color);
+    text-align: left;
+ }
+ tfoot td, th{
+    background:var(--light-gray-color);
+ }
+ .form-group button{
+    border: 0.5rem solid white;
+    background: none;
+    color: white;
+    padding: 1.5rem 2rem;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+ }
+ .form-group button:hover{
+    border: 0.5rem solid white;
+    background: white;
+    color: var(--primary-color);
+ }
+ .form-group::placeholder{
+    color: var(--light-gray-color);
+ }
+ .form-grid legend{
+    font-style: italic;
+    font-size: 1.6rem;
+    margin-bottom: 3rem;
+
+ }
+.footer{
+    font-size: 1.6rem;
+    padding: 3rem;
+    margin-top: 3rem;
+    text-align: center;
+}
+.footer a{
+    color: inherit;
+}
+.close-menu{
+    display: none;
+
+}
+.back-to-top{
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: #0A1128;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: white;
+    transform: rotate(-90deg);
+    border: 0.1rem solid white;
+
+}
+
+
+@media (max-width: 800px){
+    .intro-content, .grid{
+        grid-template-columns: 1fr;
+    }
+    .gallery-img{
+        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+    }
+    .gallery-img img{
+        width: 100%;
+    }
+    .menu{
+        bottom: 0;
+        text-align: center;
+    }
+    .menu-content, .menu-content ul{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .menu-content{
+        height: 100vh;
+
+    }
+    .menu{
+        display: none;
+
+    }
+    /*.close-menu{
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        left: 0;
+
+    }*/
+
+    .close-menu-label::after{
+        content: '≡';
+        position: fixed;
+        z-index: 2;
+        top: 2rem;
+        right: 2rem;
+        background-color: #0A1128;
+        color: white;
+        font-size: 3rem;
+        line-height: 3rem;
+        width: 3rem;
+        height: 3rem;
+        text-align: center;
+        padding: 1rem;
+        cursor: pointer;
+    }
+    .close-menu:checked~.menu{
+        display: block;
+    }
+    .close-menu:checked~.close-menu-label::after{
+        content: '×';
+
+
+    }
+    .menu-spacing{
+        display: none;
+    }
+
+}
+
+
+
+
+
