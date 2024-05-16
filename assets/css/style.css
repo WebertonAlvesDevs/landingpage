@@ -359,9 +359,10 @@ table caption{
 }
 
 
-@media (max-width: 800px){
+@media (max-width: 768px){
     .intro-content, .grid{
         grid-template-columns: 1fr;
+    
     }
     .gallery-img{
         width: 100%;
